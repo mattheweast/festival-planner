@@ -1,6 +1,8 @@
 # pythonapi
 
-## Tech Stack
-- FastAPI
-- postgreSQL
-- sqlalchemy
+Run local server:
+
+```bash
+
+uvicorn main:app --reload
+```
