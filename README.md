@@ -6,3 +6,10 @@ Run local server:
 
 uvicorn main:app --reload
 ```
+
+Install requirements.txt
+
+```bash
+
+pip install -r requirements.txt
+```

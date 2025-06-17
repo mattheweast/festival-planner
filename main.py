@@ -11,3 +11,7 @@ def root():
 @app.get("/posts")
 def get_posts():
     return{"data": "You're Posts"}
+
+@app.post("/createposts")
+def create_post():
+    return {"message": "Successfully created post"}
