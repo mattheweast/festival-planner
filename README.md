@@ -2,21 +2,13 @@
 
 ## Python Virtual Environment
 
-### 1. Clone the project
-git clone https://github.com/yourusername/project.git
-cd project
-
-### 2. Go one level up and create a virtual environment
-cd ..
+### create a virtual environment
 python3 -m venv venv
 
-### 3. Activate it
+### Activate it
 source venv/bin/activate
 
-### 4. Return to the project
-cd project
-
-#### Install requirements.txt
+### Install requirements.txt
 
 ```bash
 
