@@ -4,7 +4,7 @@ Run local server:
 
 ```bash
 
-uvicorn main:app --reload
+uvicorn backend.app.main:app --reload
 ```
 
 Install requirements.txt
