@@ -27,4 +27,8 @@ uvicorn backend.app.main:app --reload --reload-dir backend
 ```bash
 npm run web
 ```
-
+# Flake8 
+### Check Code to PEP8 Guidelines (Python)
+```bash
+flake8
+```
