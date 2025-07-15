@@ -25,6 +25,7 @@ executing==2.2.0
 fastapi==0.115.12
 fastapi-cli==0.0.7
 fastjsonschema==2.21.1
+flake8==7.3.0
 Flask==3.0.3
 fqdn==1.5.1
 h11==0.14.0
@@ -59,6 +60,7 @@ jupyterlab_widgets==3.0.13
 markdown-it-py==3.0.0
 MarkupSafe==3.0.2
 matplotlib-inline==0.1.7
+mccabe==0.7.0
 mdurl==0.1.2
 mistune==3.1.2
 nbclient==0.10.2
@@ -83,11 +85,13 @@ psycopg2==2.9.10
 psycopg2-binary==2.9.10
 ptyprocess==0.7.0
 pure_eval==0.2.3
+pycodestyle==2.14.0
 pycparser==2.22
 pydantic==2.11.5
 pydantic-extra-types==2.10.5
 pydantic-settings==2.9.1
 pydantic_core==2.33.2
+pyflakes==3.4.0
 Pygments==2.19.1
 python-dateutil==2.9.0.post0
 python-dotenv==1.1.0
