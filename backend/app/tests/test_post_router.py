@@ -10,9 +10,7 @@ def test_create_post():
         "content": "This is a test post",
         "published": True
     }
-
     response = client.post("/posts", json=payload)
-
     assert response.status_code == 201
     res_json = response.json()
     assert "data" in res_json
