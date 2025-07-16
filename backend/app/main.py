@@ -43,6 +43,7 @@ def find_index_post(id):
         if p['id'] == id:
             return i
 
+
 # Route / Path Operation
 @app.get("/")
 def root():
@@ -77,7 +78,7 @@ def get_post(id: int):
 @app.delete("/posts/{id}", status_code=status.HTTP_204_NO_CONTENT)
 def delete_post(id: int):
     index = find_index_post(id)
-    if index == None:
+    if index is None:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail=f"Post with id: {id} does not exist"
@@ -89,7 +90,7 @@ def delete_post(id: int):
 @app.put("/posts/{id}")
 def update_post(id: int, post: Post):
     index = find_index_post(id)
-    if index == None:
+    if index is None:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail=f"Post with id: {id} does not exist"
@@ -97,4 +98,4 @@ def update_post(id: int, post: Post):
     post_dict = post.model_dump()
     post_dict['id'] = id
     my_posts[index] = post_dict
-    return{'data': 'post_dict'}
+    return {'data': 'post_dict'}
