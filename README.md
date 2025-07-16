@@ -102,3 +102,44 @@ TBD – plans to host the backend (e.g., Railway, Render, Fly.io) and frontend (
 
 ---
 
+
+```
+project-mono-repo
+├─ .flake8
+├─ .idea
+│  ├─ inspectionProfiles
+│  │  └─ profiles_settings.xml
+│  ├─ misc.xml
+│  ├─ modules.xml
+│  ├─ project-mono-repo.iml
+│  ├─ vcs.xml
+│  └─ workspace.xml
+├─ README.md
+├─ backend
+│  ├─ __init__.py
+│  └─ app
+│     ├─ __init__.py
+│     ├─ main.py
+│     └─ tests
+│        ├─ __init__.py
+│        └─ test_main.py
+├─ package-lock.json
+├─ package.json
+├─ requirements.txt
+└─ web
+   ├─ README.md
+   ├─ package-lock.json
+   ├─ package.json
+   ├─ public
+   │  └─ index.html
+   └─ src
+      ├─ App.css
+      ├─ App.js
+      ├─ App.test.js
+      ├─ index.css
+      ├─ index.js
+      ├─ logo.svg
+      ├─ reportWebVitals.js
+      └─ setupTests.js
+
+```
