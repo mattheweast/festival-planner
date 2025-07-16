@@ -55,4 +55,4 @@ def update_post(id: int, post: Post):
     post_dict = post.model_dump()
     post_dict['id'] = id
     my_posts[index] = post_dict
-    return {'data': 'post_dict'}
+    return {'data': post_dict}
