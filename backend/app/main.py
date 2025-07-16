@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import Optional
 from fastapi.middleware.cors import CORSMiddleware
+from random import randrange
 
 
 # FastAPI Instance
@@ -17,12 +18,24 @@ app.add_middleware(
 )
 
 
-# Validation
+# Pydantic Validation
 class Post(BaseModel):
     title: str
     content: str
     published: bool = True
     rating: Optional[int] = None
+
+
+my_posts = [
+    {"title": "title of post 1", "content": "content of post 1", "id": 1},
+    {"title": "title of post 2", "content": "content of post 2", "id": 2}
+           ]
+
+
+def find_post(id):
+    for p in my_posts:
+        if p["id"] == id:
+            return p
 
 
 # Route / Path Operation
@@ -33,10 +46,19 @@ def root():
 
 @app.get("/posts")
 def get_posts():
-    return {"data": "You're Posts"}
+    return {"data": my_posts}
 
 
-@app.post("/createposts")
+# .model_dump replaces .dict (converts to dictionary)
+@app.post("/posts")
 def create_post(post: Post):
-    print(post.model_dump())
-    return {"data": "new post"}
+    post_dict = post.model_dump()
+    post_dict['id'] = randrange(0, 1000000)
+    my_posts.append(post_dict)
+    return {"data": post_dict}
+
+
+@app.get("/posts/{id}")
+def get_post(id: int):
+    post = find_post(id)
+    return {"post_detail": post}
