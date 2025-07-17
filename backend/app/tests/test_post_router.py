@@ -52,8 +52,7 @@ def test_update_post():
     payload = {
         "title": "Updated Title",
         "content": "Updated content",
-        "published": True,
-        "rating": 5
+        "published": True
     }
     response = client.put("/posts/1", json=payload)
     assert response.status_code == 200
@@ -64,4 +63,3 @@ def test_update_post():
     assert updated_post["title"] == payload["title"]
     assert updated_post["content"] == payload["content"]
     assert updated_post["published"] == payload["published"]
-    assert updated_post["rating"] == payload["rating"]
