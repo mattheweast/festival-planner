@@ -3,12 +3,15 @@ from random import randrange
 from backend.app.schemas.post_schema import Post
 from backend.app.helpers import find_post, find_index_post
 from backend.app.data import my_posts
+from backend.app.database.database import cursor
 
 post_router = APIRouter()
 
 
 @post_router.get("/posts")
 def get_posts():
+    posts = cursor.execute("""SELECT * FROM posts""")
+    print(posts)
     return {"data": my_posts}
 
 
