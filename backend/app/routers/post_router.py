@@ -10,9 +10,9 @@ post_router = APIRouter()
 
 @post_router.get("/posts")
 def get_posts():
-    posts = cursor.execute("""SELECT * FROM posts""")
-    print(posts)
-    return {"data": my_posts}
+    cursor.execute("""SELECT * FROM posts""")
+    posts = cursor.fetchall()
+    return {"data": posts}
 
 
 # .model_dump replaces .dict (converts to dictionary)
